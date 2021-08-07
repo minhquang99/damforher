@@ -1,10 +1,11 @@
 import React from 'react'
+import Helmet from '../components/Helmet';
 
 export const Cart = () => {
     return (
-        <div>
+        <Helmet title="Giỏ hàng">
             Cart
-        </div>
+        </Helmet>
     )
 }
 
