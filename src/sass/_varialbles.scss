@@ -1,0 +1,28 @@
+$main-bg: #fff;
+$main-color: #42210b;
+
+$txt-main-color: #42210b;
+$txt-second-color: #000;
+
+$btn-main-color: $main-color;
+
+$header-height: 170px;
+$header-table-height: 70px;
+$header-mobile-height: 40px;
+$header-shrink-height: 70px;
+
+$box-shadow: #42210b 0px 0.5px 14px;
+
+$colors: (
+    "brown": #42210b,
+    "orange": #fbb96b,
+    "pink": #fe7e73,
+    "white": #fff,
+    "black": #000,
+    "main": $main-color,
+);
+
+$mobile-width: 600px;
+$table-width: 1024px;
+
+$numbers: (1, 2, 3, 4, 5, 6, 7, 8);
