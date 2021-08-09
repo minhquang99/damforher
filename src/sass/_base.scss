@@ -43,13 +43,17 @@ a:hover {
     .grid-col-#{$var} {
         grid-template-columns: repeat($var, 1fr);
     }
+}
 
+@each $var in $numbers {
     .grid-col-md-#{$var} {
         @include tablet {
             grid-template-columns: repeat($var, 1fr);
         }
     }
+}
 
+@each $var in $numbers {
     .grid-col-sm-#{$var} {
         @include mobile {
             grid-template-columns: repeat($var, 1fr);
