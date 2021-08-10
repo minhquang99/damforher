@@ -1,6 +1,7 @@
 import React, { useCallback, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
+import Button from './Button'
 
 const HeroSlider = props => {
 
@@ -80,7 +81,13 @@ const HeroSliderItem = props => (
             </div>
             <div className="hero-slider__item__info__btn">
                 <Link to={props.item.path}>
-                    <button>Xem chi tiết</button>
+                    <Button
+                        backgroundColor={props.item.color}
+                        icon="bx bx-cart"
+                        animate={true}
+                    >
+                        Xem Chi tiet
+                    </Button>
                 </Link>
             </div>
         </div>

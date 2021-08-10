@@ -1,7 +1,13 @@
 import React from 'react'
 import heroSliderData from '../assets/fake-data/hero-slider';
+import policy from '../assets/fake-data/policy';
 import Helmet from '../components/Helmet';
 import HeroSlider from '../components/HeroSlider';
+import PolicyCard from '../components/PolicyCard';
+import Section, { SectionBody, SectionTitle } from '../components/Section';
+import Grid from '../components/Grid';
+import productData from '../assets/fake-data/product';
+import ProductCard from '../components/ProductCard';
 
 export const Home = () => {
     return (
@@ -12,6 +18,54 @@ export const Home = () => {
                 auto={false}
                 timeOut={4000}
             />
+
+            <Section>
+                <SectionBody>
+                    <Grid
+                        col={4}
+                        mdCol={2}
+                        smCol={1}
+                        gap={10}
+                    >
+                        {
+                            policy.map((item, index) => <PolicyCard
+                                key={index}
+                                name={item.name}
+                                description={item.description}
+                                icon={item.icon}
+                            />)
+                        }
+                    </Grid>
+
+                </SectionBody>
+            </Section>
+
+            <Section>
+                <SectionTitle>
+                    Sản phẩm bán chạy
+                </SectionTitle>
+                <SectionBody>
+                    <Grid
+                        col={4}
+                        mdCol={2}
+                        smCol={1}
+                        gap={10}
+                    >
+                        {
+                            productData.getProducts(4).map((item, index) => (
+                                <ProductCard
+                                    key={index}
+                                    img01={item.img01}
+                                    img02={item.img02}
+                                    name={item.name}
+                                    price={item.price}
+                                    slug={item.slug}
+                                />
+                            ))
+                        }
+                    </Grid>
+                </SectionBody>
+            </Section>
         </Helmet>
     )
 }

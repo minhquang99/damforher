@@ -4,6 +4,13 @@ const img3 = require("../images/slide/3.png").default
 
 const heroSliderData = [
     {
+        title: "Đầm ôm",
+        img: img3,
+        color: "orange",
+        description: "Những chiếc đầm dáng ôm khéo léo tôn lên đường cong của người mặc, là lựa chọn tuyệt vời của những cô nàng có thân hình cân đối. Đầm ôm mang lại nét đẹp hiện đại, trẻ trung và đầy tự tin. Bạn có thể chọn một đầm cổ vest dài ngang gối mix cùng giày cao gót và túi xách để đi gặp đối tác, đầm sát nách hay đầm xẻ tà để dạo phố, cafe cuối tuần,...",
+        path: "/catalog/jumsuit-to-bong"
+    },
+    {
         title: "Đầm xuông",
         img: img1,
         color: "orange",
@@ -17,13 +24,7 @@ const heroSliderData = [
         description: "Tuy là dáng đầm truyền thống đã xuất hiện từ lâu nhưng đầm xòe vẫn luôn được yêu thícch cho đến ngày nay nhờ vẻ thanh lịch, nữ tính nhưng vẫn cực kì năng động, trẻ trung. Đầm xòe cũng có thể diện trong nhiều dịp, chẳng hạn như đi chơi, tiệc tùng hay bất kì sự kiện nào mà nàng muốn trở nên thu hút mà vẫn đủ nhã nhặn.",
         path: "/catalog/candy-white-dress"
     },
-    {
-        title: "Đầm ôm",
-        img: img3,
-        color: "orange",
-        description: "Những chiếc đầm dáng ôm khéo léo tôn lên đường cong của người mặc, là lựa chọn tuyệt vời của những cô nàng có thân hình cân đối. Đầm ôm mang lại nét đẹp hiện đại, trẻ trung và đầy tự tin. Bạn có thể chọn một đầm cổ vest dài ngang gối mix cùng giày cao gót và túi xách để đi gặp đối tác, đầm sát nách hay đầm xẻ tà để dạo phố, cafe cuối tuần,...",
-        path: "/catalog/jumsuit-to-bong"
-    },
+    
 ]
 
 export default heroSliderData
