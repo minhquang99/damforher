@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/damforher/static/css/main.6944a532.chunk.css",
+    "main.js": "/damforher/static/js/main.b6ce1b08.chunk.js",
+    "main.js.map": "/damforher/static/js/main.b6ce1b08.chunk.js.map",
+    "runtime-main.js": "/damforher/static/js/runtime-main.e9099d99.js",
+    "runtime-main.js.map": "/damforher/static/js/runtime-main.e9099d99.js.map",
+    "static/js/2.331abf66.chunk.js": "/damforher/static/js/2.331abf66.chunk.js",
+    "static/js/2.331abf66.chunk.js.map": "/damforher/static/js/2.331abf66.chunk.js.map",
+    "static/js/3.0a074c8a.chunk.js": "/damforher/static/js/3.0a074c8a.chunk.js",
+    "static/js/3.0a074c8a.chunk.js.map": "/damforher/static/js/3.0a074c8a.chunk.js.map",
+    "index.html": "/damforher/index.html",
+    "static/css/main.6944a532.chunk.css.map": "/damforher/static/css/main.6944a532.chunk.css.map",
+    "static/js/2.331abf66.chunk.js.LICENSE.txt": "/damforher/static/js/2.331abf66.chunk.js.LICENSE.txt",
+    "static/media/1.png": "/damforher/static/media/1.32f3be1e.png",
+    "static/media/2.png": "/damforher/static/media/2.1d79e9ec.png",
+    "static/media/3.png": "/damforher/static/media/3.6be4c853.png",
+    "static/media/boxicons.min.css": "/damforher/static/media/boxicons.c324d2b5.eot",
+    "static/media/logo.ef2da4b7.png": "/damforher/static/media/logo.ef2da4b7.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e9099d99.js",
+    "static/js/2.331abf66.chunk.js",
+    "static/css/main.6944a532.chunk.css",
+    "static/js/main.b6ce1b08.chunk.js"
+  ]
+}
