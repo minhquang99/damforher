@@ -5,7 +5,7 @@ import { Link, useLocation } from 'react-router-dom'
 const mainNav = [
     {
         display: 'Trang chủ',
-        path: '/'
+        path: '/damforher'
     },
     {
         display: 'Sản phẩm',
@@ -51,7 +51,7 @@ export const Header = () => {
         <div className="header" ref={headerRef}>
             <div className="container">
                 <div className="header__logo">
-                    <Link to="/">
+                    <Link to="/damforher">
                         <img src={logo} alt="" />
                     </Link>
                 </div>
