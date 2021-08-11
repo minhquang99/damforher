@@ -3,20 +3,24 @@ import PropTypes from 'prop-types'
 import productData from '../assets/fake-data/product'
 import { Link } from 'react-router-dom'
 import Button from './Button'
+import numberWithCommas from '../utils/numberWithCommas'
 
 const ProductCard = props => {
     return (
         <div className="product-card">
-            <Link>
+            <Link to={`/catalog/${props.slug}`}>
                 <div className="product-card__image">
                     <img src={props.img01} alt="" />
                     <img src={props.img02} alt="" />
                 </div>
-                <h5 className="product-card__name">{props.name}</h5>
-                <div className="product-cart__price">
-                    {props.price}
+                <div className="product-card__name">
+                    <h5>{props.name}</h5>
+                </div>
+                {/* <h5 className="product-card__name">{props.name}</h5> */}
+                <div className="product-card__price">
+                    {numberWithCommas(props.price)}
                     <span className="product-card__price__old">
-                        <del>800000</del>
+                        <del>{numberWithCommas(800000)}</del>
                     </span>
                 </div>
             </Link>

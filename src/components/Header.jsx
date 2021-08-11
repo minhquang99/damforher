@@ -57,11 +57,11 @@ export const Header = () => {
                 </div>
                 <div className="header__menu">
                     <div className="header__menu__mobile-toggle" onClick={menuToggle}>
-                        <i class='bx bx-menu-alt-left' ></i>
+                        <i className='bx bx-menu-alt-left' ></i>
                     </div>
                     <div className="header__menu__left" ref={menuRef}>
                         <div className="header__menu__left__close">
-                            <i class='bx bx-chevron-left'></i>
+                            <i className='bx bx-chevron-left'></i>
                         </div>
                         {
                             mainNav.map((item, index) => (
@@ -80,17 +80,17 @@ export const Header = () => {
                     <div className="header__menu__right">
                         <div className="header__menu__item header__menu__right__item">
                             <Link to="/search">
-                                <i class='bx bx-search-alt-2' ></i>
+                                <i className='bx bx-search-alt-2' ></i>
                             </Link>
                         </div>
                         <div className="header__menu__item header__menu__right__item">
                             <Link to="/cart">
-                                <i class='bx bx-cart' ></i>
+                                <i className='bx bx-cart' ></i>
                             </Link>
                         </div>
                         <div className="header__menu__item header__menu__right__item">
                             <Link to="/user">
-                                <i class='bx bx-user' ></i>
+                                <i className='bx bx-user' ></i>
                             </Link>
                         </div>
                     </div>

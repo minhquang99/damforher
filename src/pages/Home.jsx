@@ -15,8 +15,8 @@ export const Home = () => {
             <HeroSlider
                 data={heroSliderData}
                 control={true}
-                auto={false}
-                timeOut={4000}
+                auto={true}
+                timeOut={3000}
             />
 
             <Section>
@@ -57,8 +57,8 @@ export const Home = () => {
                                     key={index}
                                     img01={item.img01}
                                     img02={item.img02}
-                                    name={item.name}
-                                    price={item.price}
+                                    name={item.title}
+                                    price={Number(item.price)}
                                     slug={item.slug}
                                 />
                             ))
