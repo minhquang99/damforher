@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useState, useEffect } from 'react'
 import category from '../assets/fake-data/category';
 import color from '../assets/fake-data/color';
 import size from '../assets/fake-data/size';
@@ -55,16 +55,38 @@ export const Catalog = () => {
         }
     }
 
-    // const updateProduct = useCallback(
-    //     () => {
-    //         let temp = productList;
-    //         if (filter.category.length > 0) {
-    //             temp = temp.filter(e => filter.category.includes(e.categorySlug));
-    //         }
+    const clearFilter = () => setFilter(intitState)
 
-    //     },
-    //     [input],
-    // )
+    const updateProduct = useCallback(
+        () => {
+            let temp = productList;
+            if (filter.category.length > 0) {
+                temp = temp.filter(e => filter.category.includes(e.categorySlug));
+            }
+
+            if (filter.color.length > 0) {
+                temp = temp.filter(e => {
+                    const check = e.colors.find(color => filter.color.includes(color));
+                    return check !== undefined;
+                })
+            }
+
+            if (filter.size.length > 0) {
+                temp = temp.filter(e => {
+                    const check = e.size.find(size => filter.size.includes(size));
+                    return check !== undefined;
+                });
+            }
+
+            setProduct(temp);
+            //console.log(temp);
+        },
+        [filter, productList],
+    );
+
+    useEffect(() => {
+        updateProduct()
+    }, [updateProduct])
 
     return (
         <Helmet title="Sản phẩm">
@@ -85,6 +107,7 @@ export const Catalog = () => {
                                             key={index}
                                             label={item.display}
                                             onChange={(input) => filterSelect("CATEGORY", input.checked, item)}
+                                            checked={filter.category.includes(item.categorySlug)}
                                         />
                                     </div>
                                 ))
@@ -132,7 +155,7 @@ export const Catalog = () => {
 
                     <div className="catalog__filter__widget">
                         <div className="catalog__filter__widget__content">
-                            <Button size="sm">Xóa bộ lọc</Button>
+                            <Button size="sm" onClick={clearFilter}>Xóa bộ lọc</Button>
                         </div>
                     </div>
                 </div>
@@ -144,7 +167,7 @@ export const Catalog = () => {
                         gap={10}
                     >
                         {
-                            productData.getAllProducts().map((item, index) =>
+                            product.map((item, index) =>
                                 <ProductCard
                                     key={index}
                                     name={item.title}
