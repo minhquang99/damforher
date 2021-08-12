@@ -8,6 +8,8 @@ import Section, { SectionBody, SectionTitle } from '../components/Section';
 import Grid from '../components/Grid';
 import productData from '../assets/fake-data/product';
 import ProductCard from '../components/ProductCard';
+import banner from '../assets/images/banner.jpg'
+import { Link } from 'react-router-dom';
 
 export const Home = () => {
     return (
@@ -53,6 +55,41 @@ export const Home = () => {
                     >
                         {
                             productData.getProducts(4).map((item, index) => (
+                                <ProductCard
+                                    key={index}
+                                    img01={item.img01}
+                                    img02={item.img02}
+                                    name={item.title}
+                                    price={Number(item.price)}
+                                    slug={item.slug}
+                                />
+                            ))
+                        }
+                    </Grid>
+                </SectionBody>
+            </Section>
+
+            <Section>
+                <SectionBody>
+                    <Link to="/catalog">
+                        <img src={banner} alt="" />
+                    </Link>
+                </SectionBody>
+            </Section>
+
+            <Section>
+                <SectionTitle>
+                    Sản phẩm mới
+                </SectionTitle>
+                <SectionBody>
+                    <Grid
+                        col={4}
+                        mdCol={2}
+                        smCol={1}
+                        gap={10}
+                    >
+                        {
+                            productData.getProducts(8).map((item, index) => (
                                 <ProductCard
                                     key={index}
                                     img01={item.img01}

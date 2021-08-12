@@ -13,14 +13,14 @@ const product04_img02 = require("../images/products/41.jpg").default
 const product05_img01 = require("../images/products/5.jpg").default
 const product05_img02 = require("../images/products/51.jpg").default
 
-// const product06_img01 = require("../images/products/6.jpg").default
-// const product06_img02 = require("../images/products/61.jpg").default
+const product06_img01 = require("../images/products/6.jpg").default
+const product06_img02 = require("../images/products/61.jpg").default
 
-// const product07_img01 = require("../images/products/7.jpg").default
-// const product07_img02 = require("../images/products/71.jpg").default
+const product07_img01 = require("../images/products/7.jpg").default
+const product07_img02 = require("../images/products/71.jpg").default
 
-// const product08_img01 = require("../images/products/8.jpg").default
-// const product08_img02 = require("../images/products/81.jpg").default
+const product08_img01 = require("../images/products/8.jpg").default
+const product08_img02 = require("../images/products/81.jpg").default
 
 const products = [
     {
@@ -71,6 +71,36 @@ const products = [
         categorySlug: "dam",
         colors: ["blue", "pink"],
         slug: "dam-form-suong-phoi-yem-caro-gingham",
+        size: ["S", "M", "L", "XL"]
+    },
+    {
+        title: "Đầm 2 dây midi 2 tầng form babydoll",
+        price: '795000',
+        img01: product06_img01,
+        img02: product06_img02,
+        categorySlug: "dam",
+        colors: ["white"],
+        slug: "dam-2-day-midi-2-tang-form-babydoll",
+        size: ["S", "M", "L", "XL"]
+    },
+    {
+        title: "Đầm midi xoắn ngực họa tiết hoa tay nhún",
+        price: '695000',
+        img01: product07_img01,
+        img02: product07_img02,
+        categorySlug: "dam",
+        colors: ["white", "pink"],
+        slug: "dam-midi-xoan-nguc-hoa-tiet-hoa-tay-nhun",
+        size: ["S", "M", "L", "XL"]
+    },
+    {
+        title: "Đầm 3 tầng cột nơ ngực hoa nhí",
+        price: '695000',
+        img01: product08_img01,
+        img02: product08_img02,
+        categorySlug: "dam",
+        colors: ["pink"],
+        slug: "dam-3-tang-cot-no-nguc-hoa-nhi",
         size: ["S", "M", "L", "XL"]
     },
 ]
