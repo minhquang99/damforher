@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useEffect } from 'react'
+import React, { useCallback, useState, useEffect, useRef } from 'react'
 import category from '../assets/fake-data/category';
 import color from '../assets/fake-data/color';
 import size from '../assets/fake-data/size';
@@ -88,16 +88,23 @@ export const Catalog = () => {
         updateProduct()
     }, [updateProduct])
 
+    const filterRef = useRef(null);
+
+    const showHideFilter = () => filterRef.current.classList.toggle('active');
+
     return (
         <Helmet title="Sản phẩm">
             {
                 console.log(filter)
             }
             <div className="catalog">
-                <div className="catalog__filter">
+                <div className="catalog__filter" ref={filterRef}>
+                    <div className="catalog__filter__close">
+                        <i className="bx bx-left-arrow-alt" onClick={() => showHideFilter()}></i>
+                    </div>
                     <div className="catalog__filter__widget">
                         <div className="catalog__filter__widget__title">
-                            Danh mục sản phẩm
+                            Danh mục
                         </div>
                         <div className="catalog__filter__widget__content">
                             {
@@ -127,6 +134,7 @@ export const Catalog = () => {
                                             key={index}
                                             label={item.display}
                                             onChange={(input) => filterSelect("COLOR", input.checked, item)}
+                                            checked={filter.color.includes(item.color)}
                                         />
                                     </div>
                                 ))
@@ -146,6 +154,7 @@ export const Catalog = () => {
                                             key={index}
                                             label={item.display}
                                             onChange={(input) => filterSelect("SIZE", input.checked, item)}
+                                            checked={filter.size.includes(item.size)}
                                         />
                                     </div>
                                 ))
@@ -158,6 +167,9 @@ export const Catalog = () => {
                             <Button size="sm" onClick={clearFilter}>Xóa bộ lọc</Button>
                         </div>
                     </div>
+                </div>
+                <div className="catalog__filter__toggle">
+                    <Button size="sm" onClick={() => showHideFilter()}>Lọc</Button>
                 </div>
                 <div className="catalog__content">
                     <Grid
