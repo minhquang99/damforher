@@ -4,6 +4,7 @@ import Helmet from '../components/Helmet';
 import Section, { SectionBody, SectionTitle } from '../components/Section';
 import Grid from '../components/Grid';
 import ProductCard from '../components/ProductCard';
+import ProductDetail from '../components/ProductDetail';
 
 export const Product = props => {
 
@@ -15,7 +16,7 @@ export const Product = props => {
         <Helmet title={product.title}>
             <Section>
                 <SectionBody>
-                    Product Detail
+                    <ProductDetail product={product} ></ProductDetail>
                 </SectionBody>
             </Section>
 

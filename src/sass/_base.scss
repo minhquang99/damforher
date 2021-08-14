@@ -10,6 +10,10 @@
 html {
     font-size: 13px;
     scroll-behavior: smooth;
+
+    @include mobile {
+        font-size: 11px;
+    }
 }
 
 body {
