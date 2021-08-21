@@ -14,7 +14,8 @@ export const Catalog = () => {
     const intitState = {
         category: [],
         color: [],
-        size: []
+        size: [],
+        title__like: []
     }
 
     const productList = productData.getAllProducts();
@@ -55,6 +56,18 @@ export const Catalog = () => {
         }
     }
 
+    const [searchTerm, setSearchTerm] = useState(['']);
+
+    const filterSearch = (e) => {
+        const value = e.target.value;
+        setSearchTerm(value);
+
+        setFilter({
+            ...filter,
+            title__like: searchTerm
+        })
+    }
+
     const clearFilter = () => setFilter(intitState)
 
     const updateProduct = useCallback(
@@ -78,6 +91,10 @@ export const Catalog = () => {
                 });
             }
 
+            if (filter.title__like === searchTerm) {
+                temp = temp.filter(e => filter.title__like.includes(e.searchTerm));
+            }
+
             setProduct(temp);
             //console.log(temp);
         },
@@ -99,6 +116,17 @@ export const Catalog = () => {
             }
             <div className="catalog">
                 <div className="catalog__filter" ref={filterRef}>
+                    <div className="catalog__filter__search">
+                        <form action="">
+                            <input
+                                type="text"
+                                value={searchTerm}
+                                onChange={filterSearch}
+                            />
+                            <i className='bx bx-search-alt-2' ></i>
+                        </form>
+
+                    </div>
                     <div className="catalog__filter__close">
                         <i className="bx bx-left-arrow-alt" onClick={() => showHideFilter()}></i>
                     </div>

@@ -9,10 +9,6 @@ const mainNav = [
     },
     {
         display: 'Sản phẩm',
-        path: '/product'
-    },
-    {
-        display: 'Phụ kiện',
         path: '/catalog'
     },
     {

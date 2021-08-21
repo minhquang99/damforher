@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
 import numberWithCommas from '../utils/numberWithCommas';
 import Button from './Button';
+import productData from '../assets/fake-data/product';
 
 const ProductDetail = props => {
 
     const product = props.product;
+
 
     const [previewImg, setPreviewImg] = useState(product.img01);
 
@@ -15,6 +17,8 @@ const ProductDetail = props => {
     const [size, setSize] = useState(undefined);
 
     const [quantity, setQuantity] = useState(1);
+
+    const [productCart, setProductCart] = useState('');
 
     const updateQuantity = (type) => {
         if (type === 'plus') {
@@ -45,8 +49,11 @@ const ProductDetail = props => {
         return true;
     }
 
-    const addToCart = () => {
-        if (check()) console.log(size, color, quantity);
+    const addToCart = (title) => {
+        if (check()) {
+            console.log(size, color, quantity);
+
+        }
     }
 
     const goToCart = () => {
