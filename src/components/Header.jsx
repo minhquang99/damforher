@@ -34,7 +34,7 @@ export const Header = () => {
             }
         })
         return () => {
-            window.removeEventListener("scroll")
+            window.removeEventListener("scroll", null)
         }
     }, [])
 
@@ -42,6 +42,16 @@ export const Header = () => {
     const menuRef = useRef(null);
 
     const menuToggle = () => menuRef.current.classList.toggle('active')
+
+    const showCart = () => {
+        var x = document.getElementById("mini-cart");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        }
+        else {
+            x.style.display = "none";
+        }
+    }
 
     return (
         <div className="header" ref={headerRef}>
@@ -80,7 +90,7 @@ export const Header = () => {
                             </Link>
                         </div>
                         <div className="header__menu__item header__menu__right__item">
-                            <Link to="/cart">
+                            <Link onClick={showCart}>
                                 <i className='bx bx-cart' ></i>
                             </Link>
                         </div>

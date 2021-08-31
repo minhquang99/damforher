@@ -24,6 +24,7 @@ const product08_img02 = require("../images/products/81.jpg").default
 
 const products = [
     {
+        id: '1',
         title: "Đầm midi nhấn ly eo cái nút trước",
         price: '695000',
         img01: product01_img01,
@@ -34,6 +35,7 @@ const products = [
         size: ["s", "m", "l", "xl"]
     },
     {
+        id: '2',
         title: "Đầm bẹt vai ren tùng xòe 3 tầng",
         price: '795000',
         img01: product02_img01,
@@ -44,6 +46,7 @@ const products = [
         size: ["s", "m", "l"]
     },
     {
+        id: '3',
         title: "Đầm 2 dây mini nhấn nơ bản",
         price: '495000',
         img01: product03_img01,
@@ -54,6 +57,7 @@ const products = [
         size: ["s", "m", "l"]
     },
     {
+        id: '4',
         title: "Đầm mini cổ vuông nơ sau họa tiết hoa",
         price: '595000',
         img01: product04_img01,
@@ -64,6 +68,7 @@ const products = [
         size: ["m", "xl"]
     },
     {
+        id: '5',
         title: "Đầm form suông phối yếm caro gingham",
         price: '595000',
         img01: product05_img01,
@@ -74,6 +79,7 @@ const products = [
         size: ["m", "l"]
     },
     {
+        id: '6',
         title: "Đầm 2 dây midi 2 tầng form babydoll",
         price: '795000',
         img01: product06_img01,
@@ -84,6 +90,7 @@ const products = [
         size: ["s", "l", "xl"]
     },
     {
+        id: '7',
         title: "Đầm midi xoắn ngực họa tiết hoa tay nhún",
         price: '695000',
         img01: product07_img01,
@@ -94,6 +101,7 @@ const products = [
         size: ["s", "m", "l"]
     },
     {
+        id: '8',
         title: "Đầm 3 tầng cột nơ ngực hoa nhí",
         price: '695000',
         img01: product08_img01,

@@ -6,6 +6,8 @@ import Button from './Button'
 import numberWithCommas from '../utils/numberWithCommas'
 
 const ProductCard = props => {
+    const { onAdd } = props;
+
     return (
         <div className="product-card">
             <Link to={`/catalog/${props.slug}`}>
@@ -29,6 +31,7 @@ const ProductCard = props => {
                     size="sm"
                     icon="bx bx-cart"
                     animate={true}
+                    onClick={onAdd}
                 >
                     Mua hàng
                 </Button>
@@ -43,6 +46,7 @@ ProductCard.propTypes = {
     name: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     slug: PropTypes.string.isRequired,
+    onAdd: PropTypes.func,
 }
 
 export default ProductCard

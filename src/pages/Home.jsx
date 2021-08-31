@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import heroSliderData from '../assets/fake-data/hero-slider';
 import policy from '../assets/fake-data/policy';
 import Helmet from '../components/Helmet';
@@ -10,8 +10,33 @@ import productData from '../assets/fake-data/product';
 import ProductCard from '../components/ProductCard';
 import banner from '../assets/images/banner.jpg'
 import { Link } from 'react-router-dom';
+import Cart from './Cart';
+import MiniCart from '../components/MiniCart';
+
+// const cartItemsFromLocalStorage = JSON.parse(localStorage.getItem("cart"));
 
 export const Home = () => {
+
+    const [cartItems, setCartItems] = useState([]);
+
+    // useEffect(() => {
+    //     localStorage.setItem("cart", JSON.stringify(cartItems));
+    // }, [cartItems])
+
+    const onAdd = (product) => {
+        const exist = cartItems.find((x) => x.id === product.id);
+
+        if (exist) {
+            setCartItems(
+                cartItems.map((x) =>
+                    x.id === product.id ? { ...exist, qty: exist.qty + 1 } : x
+                )
+            )
+        } else {
+            setCartItems([...cartItems, { ...product, qty: 1 }])
+        }
+    }
+
     return (
         <Helmet title="Trang chủ">
             <HeroSlider
@@ -20,7 +45,7 @@ export const Home = () => {
                 auto={true}
                 timeOut={3000}
             />
-
+            <MiniCart onAdd={onAdd} cartItems={cartItems} />
             <Section>
                 <SectionBody>
                     <Grid
@@ -62,6 +87,7 @@ export const Home = () => {
                                     name={item.title}
                                     price={Number(item.price)}
                                     slug={item.slug}
+                                    onAdd={() => onAdd(item)}
                                 />
                             ))
                         }
@@ -97,13 +123,16 @@ export const Home = () => {
                                     name={item.title}
                                     price={Number(item.price)}
                                     slug={item.slug}
+                                    onAdd={() => onAdd(item)}
                                 />
                             ))
                         }
                     </Grid>
                 </SectionBody>
+
             </Section>
         </Helmet>
+
     )
 }
 

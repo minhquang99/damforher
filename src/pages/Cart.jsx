@@ -1,9 +1,15 @@
 import React from 'react'
-import Grid from '../components/Grid';
-import Helmet from '../components/Helmet';
-import Section, { SectionBody, SectionTitle } from '../components/Section';
+import PropTypes from 'prop-types'
+import Helmet from '../components/Helmet'
+import Section from '../components/Section'
+import { SectionTitle } from '../components/Section'
+import { SectionBody } from '../components/Section'
+import Grid from '../components/Grid'
 
-export const Cart = () => {
+const Cart = props => {
+    const { cart } = props;
+
+    console.log("cart", cart);
     return (
         <Helmet title="Giỏ hàng">
             <Section>
@@ -18,6 +24,14 @@ export const Cart = () => {
                         smCol={1}
                         gap={10}
                     >
+                        {
+                            cart ? cart.map((item) => (
+                                <div key={item.id} className="cart">
+                                    <h2>{item.title}</h2>
+
+                                </div>
+                            )) : <p>Empty Cart</p>
+                        }
                     </Grid>
                 </SectionBody>
             </Section>
@@ -25,4 +39,8 @@ export const Cart = () => {
     )
 }
 
-export default Cart;
+Cart.propTypes = {
+    cart: PropTypes.array,
+}
+
+export default Cart
