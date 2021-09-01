@@ -12,6 +12,8 @@
     transition: 0.5s ease;
     color: brown;
 
+    display: none;
+
     &:hover {
         opacity: 1;
     }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from '../components/Helmet'
 import Section from '../components/Section'
@@ -6,10 +6,24 @@ import { SectionTitle } from '../components/Section'
 import { SectionBody } from '../components/Section'
 import Grid from '../components/Grid'
 
+const getLocalItems = () => {
+    let list = localStorage.getItem('cart');
+    // console.log(list);
+
+    if (list) {
+        return JSON.parse(localStorage.getItem('cart'));
+    } else {
+        return [];
+    }
+
+}
+
 const Cart = props => {
     const { cart } = props;
 
-    console.log("cart", cart);
+    const [cart1, setCart] = useState(getLocalItems());
+
+    console.log("cart1", cart1);
     return (
         <Helmet title="Giỏ hàng">
             <Section>
@@ -25,7 +39,7 @@ const Cart = props => {
                         gap={10}
                     >
                         {
-                            cart ? cart.map((item) => (
+                            cart1 ? cart1.map((item) => (
                                 <div key={item.id} className="cart">
                                     <h2>{item.title}</h2>
 

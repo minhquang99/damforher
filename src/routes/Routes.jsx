@@ -7,6 +7,16 @@ import Cart from '../pages/Cart'
 
 
 export const Routes = () => {
+
+    const showCart = () => {
+        var x = document.getElementById("mini-cart");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        }
+        else {
+            x.style.display = "none";
+        }
+    }
     return (
         <div>
             <Switch>

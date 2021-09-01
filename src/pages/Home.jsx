@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useReducer, useState } from 'react'
 import heroSliderData from '../assets/fake-data/hero-slider';
 import policy from '../assets/fake-data/policy';
 import Helmet from '../components/Helmet';
@@ -10,18 +10,28 @@ import productData from '../assets/fake-data/product';
 import ProductCard from '../components/ProductCard';
 import banner from '../assets/images/banner.jpg'
 import { Link } from 'react-router-dom';
-import Cart from './Cart';
 import MiniCart from '../components/MiniCart';
+import Cart from './Cart';
 
-// const cartItemsFromLocalStorage = JSON.parse(localStorage.getItem("cart"));
+const getLocalItems = () => {
+    let list = localStorage.getItem('cart');
+    // console.log(list);
+
+    if (list) {
+        return JSON.parse(localStorage.getItem('cart'));
+    } else {
+        return [];
+    }
+
+}
 
 export const Home = () => {
 
-    const [cartItems, setCartItems] = useState([]);
+    const [cartItems, setCartItems] = useState(getLocalItems());
 
-    // useEffect(() => {
-    //     localStorage.setItem("cart", JSON.stringify(cartItems));
-    // }, [cartItems])
+    useEffect(() => {
+        localStorage.setItem("cart", JSON.stringify(cartItems));
+    }, [cartItems])
 
     const onAdd = (product) => {
         const exist = cartItems.find((x) => x.id === product.id);
@@ -46,6 +56,7 @@ export const Home = () => {
                 timeOut={3000}
             />
             <MiniCart onAdd={onAdd} cartItems={cartItems} />
+            <Cart cart={cartItems} />
             <Section>
                 <SectionBody>
                     <Grid
