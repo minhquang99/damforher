@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/damforher/static/css/main.0ab60b9e.chunk.css",
-    "main.js": "/damforher/static/js/main.daad68e8.chunk.js",
-    "main.js.map": "/damforher/static/js/main.daad68e8.chunk.js.map",
+    "main.css": "/damforher/static/css/main.d7be64e2.chunk.css",
+    "main.js": "/damforher/static/js/main.3982b618.chunk.js",
+    "main.js.map": "/damforher/static/js/main.3982b618.chunk.js.map",
     "runtime-main.js": "/damforher/static/js/runtime-main.d73050fb.js",
     "runtime-main.js.map": "/damforher/static/js/runtime-main.d73050fb.js.map",
     "static/js/2.0bf4ecb5.chunk.js": "/damforher/static/js/2.0bf4ecb5.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.508488c3.chunk.js": "/damforher/static/js/3.508488c3.chunk.js",
     "static/js/3.508488c3.chunk.js.map": "/damforher/static/js/3.508488c3.chunk.js.map",
     "index.html": "/damforher/index.html",
-    "static/css/main.0ab60b9e.chunk.css.map": "/damforher/static/css/main.0ab60b9e.chunk.css.map",
+    "static/css/main.d7be64e2.chunk.css.map": "/damforher/static/css/main.d7be64e2.chunk.css.map",
     "static/js/2.0bf4ecb5.chunk.js.LICENSE.txt": "/damforher/static/js/2.0bf4ecb5.chunk.js.LICENSE.txt",
     "static/media/1.png": "/damforher/static/media/1.32f3be1e.png",
     "static/media/1.jpg": "/damforher/static/media/1.6b90f742.jpg",
@@ -38,7 +38,7 @@
   "entrypoints": [
     "static/js/runtime-main.d73050fb.js",
     "static/js/2.0bf4ecb5.chunk.js",
-    "static/css/main.0ab60b9e.chunk.css",
-    "static/js/main.daad68e8.chunk.js"
+    "static/css/main.d7be64e2.chunk.css",
+    "static/js/main.3982b618.chunk.js"
   ]
 }
