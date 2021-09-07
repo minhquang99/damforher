@@ -5,6 +5,7 @@ import Section from '../components/Section'
 import { SectionTitle } from '../components/Section'
 import { SectionBody } from '../components/Section'
 import Grid from '../components/Grid'
+import CartItem from '../components/CartItem'
 
 const getLocalItems = () => {
     let list = localStorage.getItem('cart');
@@ -18,43 +19,33 @@ const getLocalItems = () => {
 
 }
 
-const Cart = props => {
-    const { cart } = props;
+export const Cart = () => {
 
-    const [cart1, setCart] = useState(getLocalItems());
+    const [cart, setCart] = useState(getLocalItems());
 
-    console.log("cart1", cart1);
     return (
         <Helmet title="Giỏ hàng">
             <Section>
                 <SectionTitle>
-                    Giỏ hàng của bạn
+                    Giỏ hàng của bạn (being fixed)
                 </SectionTitle>
 
                 <SectionBody>
-                    <Grid
-                        col={4}
-                        mdCol={2}
-                        smCol={1}
-                        gap={10}
-                    >
-                        {
-                            cart1 ? cart1.map((item) => (
-                                <div key={item.id} className="cart">
-                                    <h2>{item.title}</h2>
-
-                                </div>
-                            )) : <p>Empty Cart</p>
-                        }
-                    </Grid>
+                    {
+                        cart ? cart.map((item, index) => (
+                            <CartItem
+                                key={index}
+                                img={item.img01}
+                                title={item.title}
+                                price={item.price}
+                                qty={item.qty}
+                            />
+                        )) : <p>Empty Cart</p>
+                    }
                 </SectionBody>
             </Section>
         </Helmet>
     )
-}
-
-Cart.propTypes = {
-    cart: PropTypes.array,
 }
 
 export default Cart

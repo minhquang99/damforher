@@ -56,7 +56,6 @@ export const Home = () => {
                 timeOut={3000}
             />
             <MiniCart onAdd={onAdd} cartItems={cartItems} />
-            <Cart cart={cartItems} />
             <Section>
                 <SectionBody>
                     <Grid

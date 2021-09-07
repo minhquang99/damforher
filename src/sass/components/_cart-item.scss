@@ -1,0 +1,35 @@
+.cart-item {
+    height: 120px;
+    width: 70%;
+    border: 0.5px solid $main-color;
+    margin-bottom: 10px;
+    justify-content: center;
+
+    display: flex;
+    flex-flow: row wrap;
+
+    div {
+        @include flex(center, center);
+    }
+
+    &__image {
+        img {
+            height: 100px;
+            width: 70px;
+        }
+
+        flex-grow: 1;
+    }
+
+    &__title {
+        flex-grow: 2;
+    }
+
+    &__price {
+        flex-grow: 1;
+    }
+
+    &__qty {
+        flex-grow: 1;
+    }
+}
