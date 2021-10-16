@@ -4,10 +4,14 @@ import reportWebVitals from './reportWebVitals';
 import { Layout } from './components/Layout';
 import './sass/index.scss';
 import './assets/boxicons-2.0.9/css/boxicons.min.css'
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Layout />
+    <Provider store={store}>
+      <Layout />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
